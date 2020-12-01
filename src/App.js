@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import { Blog } from './pages/Blog';
 import { BlogPost } from './pages/BlogPost';
 import { Login } from './pages/Login';
+import { PrivateRoute } from './components/PrivateRoute';
 
 function App() {
   return (
@@ -26,9 +27,10 @@ function App() {
           <Route path="/blog-post">
             <BlogPost />
           </Route>
-          <Route path="/login">
+          <PrivateRoute path="/login">
             <Login />
-          </Route>
+          </PrivateRoute>
+
         </Switch>
       </Router>
     </div>
