@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: wheat;
+}
+
+#root {
+  width: 900px;
+  background-color: white;
+  height: 100vh;
+}
+
+header {
+  padding-top: 20px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+header a {
+  color: #3c4a66;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.active-link {
+  border-bottom: 4px solid #3c4a66;
+}
