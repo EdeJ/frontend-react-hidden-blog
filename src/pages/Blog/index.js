@@ -1,20 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useAuthentication } from '../../hooks/authentication';
+import { Heading } from '../../components/atoms';
+import { BlogListItem } from '../../components/molecules';
 import posts from '../../data/posts.json'
 
 export const Blog = () => {
   const { isAuthenticated } = useAuthentication();
   return (
     <>
-      <h1>Blogposts {posts.length}</h1>
+      <Heading level="h1">Blogposts</Heading>
       <ul>
         {posts.map((post) => (
           <>
             {(!post.private || isAuthenticated) && (
-              <li>
-                <Link to={`/blog/${post.id}`}>{post.title}</Link>
-              </li>
+              <BlogListItem link={`/blog/${post.id}`} date={post.date.split(' ')[0]}>
+                {post.title}
+              </BlogListItem>
             )}
           </>
         ))}

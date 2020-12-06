@@ -1,10 +1,6 @@
 # Uitwerking: React Router
 
-Dit is de eenvoudigste variant ven de uitwerking. Hierbij even de aandachtspunten hiervoor:
-
-* Zorg er voor dat je de `App` in de `BrowserRouter` plaatst. Dit kan in zowel `App.js` als in `index.js`. In veel tutorials wordt `BrowserRouter` naar `Router` hernoemd.
-* In deze opdracht zijn er een aantal posts welke niet altijd getoond mogen worden. Hiervoor kun je de `PrivateRoute` gebruiken.
-
+Dit is de uitgebreidere versie van de uiitwerking. Hier heb ik ook weer rekening gehouden met de folder-structuur. Nu kan het voor sommige componenten ljken dat ze makkelijker kunnen. En dat is hier waar, maar zoals ook in de lessen aangegeven kun je nnu maqkkelijker tests, styling etcetera toevoegen voor de verschillende componenten.
 
 # Opdracht: React Router
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { BlogContent } from '../../components/molecules';
 import posts from '../../data/posts.json'
 
 export const BlogPost = () => {
@@ -9,11 +10,11 @@ export const BlogPost = () => {
   return (
     <div className="App">
       {post && (
-        <>
-          <h1>{post.title}</h1>
-          <div>{post.date}</div>
-          <p>{post.content}</p>
-        </>
+        <BlogContent
+          title={post.title}
+          content={post.content}
+          date={post.date.split(' ')[0]}
+        />
       )}
     </div>
   );

@@ -1,8 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Redirect, useLocation } from "react-router-dom";
+import { Heading, Button } from '../../components/atoms';
+import { InputField } from '../../components/molecules';
 import { useAuthentication } from "../../hooks/authentication";
 
+
+// Vamn het daadwerkelijke formulier hadden we een organism kunnen maken.
+// Echter wordt deze alleen maar op deze pagina gebruikt en kun je er voor kiezen om dit in/bij de pagina te laten
 export const Login = () => {
   const { login, isAuthenticated } = useAuthentication();
   const { register, handleSubmit } = useForm();
@@ -17,19 +22,12 @@ export const Login = () => {
         <Redirect to={location.state.from || '/blog'} />
       ) : (
         <div className="App">
-          <h1>Login</h1>
-          <code>Username: username</code>
+          <Heading level="h1">Login</Heading>
 
           <form onSubmit={handleSubmit(onSuccess)}>
-            <div>
-              <label htmlFor="username">Gebruikersnaam</label>
-              <input type="text" name="username" id="username" ref={register} />
-            </div>
-            <div>
-              <label htmlFor="password">Wachtwoord</label>
-              <input type="password" name="password" id="password" ref={register} />
-            </div>
-            <button>Login</button>
+            <InputField name="username" label="Naam" fieldRef={register} />
+            <InputField type="password" name="password" label="Wachtwoord" fieldRef={register} />
+            <Button>Login</Button>
           </form>
         </div>
       )}
